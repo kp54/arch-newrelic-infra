@@ -1,0 +1,22 @@
+diff --git a/newrelic-infra/etc/init_scripts/systemd/newrelic-infra.service.bak b/newrelic-infra/etc/init_scripts/systemd/newrelic-infra.service
+index b076411..6bb032b 100644
+--- a/newrelic-infra/etc/init_scripts/systemd/newrelic-infra.service.bak
++++ b/newrelic-infra/etc/init_scripts/systemd/newrelic-infra.service
+@@ -6,14 +6,13 @@ After=dbus.service syslog.target network.target
+ RuntimeDirectory=newrelic-infra
+ Type=simple
+ ExecStart=/usr/bin/newrelic-infra-service
+-MemoryLimit=1G
+-# MemoryMax is only supported in systemd > 230 and replaces MemoryLimit. Some cloud dists do not have that version
+-# MemoryMax=1G
++MemoryMax=1G
+ Restart=always
+ RestartSec=20
+ StartLimitInterval=0
+ StartLimitBurst=5
+-PIDFile=/var/run/newrelic-infra/newrelic-infra.pid
++PIDFile=/run/newrelic-infra/newrelic-infra.pid
++Environment=NRIA_AGENT_DIR=/var/lib/newrelic-infra/
+ 
+ [Install]
+ WantedBy=multi-user.target
