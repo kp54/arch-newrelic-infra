@@ -5,7 +5,7 @@
 
 # Maintainer: kp54 <kangpang65@gmail.com>
 pkgname=newrelic-infra
-pkgver=1.72.9
+pkgver=1.74.1
 pkgrel=1
 pkgdesc="NewRelic Infrastructure Agent"
 arch=('x86_64' 'aarch64')
@@ -18,8 +18,8 @@ source_x86_64=("https://download.newrelic.com/infrastructure_agent/binaries/linu
 source_aarch64=("https://download.newrelic.com/infrastructure_agent/binaries/linux/arm64/newrelic-infra_linux_${pkgver}_arm64.tar.gz")
 
 sha256sums=('ca9e683ac8df68d224af4cd20587fbde8b326b2bf742b7f2d4bf5f329bb1dadb')
-sha256sums_x86_64=('2a3c1a9a861bc46dc0d501671d966d2237eb67f4882796d1f5245e37fa28f421')
-sha256sums_aarch64=('402daa03f864f04387e079730822a1f7d53ce0cde23eb31053dbb067867e0cb8')
+sha256sums_x86_64=('7b99070d2453e949ad0d5d55170125f132c6d735b65f719c37fd09ebfa3f79be')
+sha256sums_aarch64=('09bf64236f835c2cfbae37f1202810892fa266094775a74953251c4427c14f5a')
 
 prepare() {
   patch -p1 -i tweak-systemd-unit.diff
